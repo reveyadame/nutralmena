@@ -1,0 +1,350 @@
+/* ═══════════════════════════════════════════
+   FOOTER — Tierra Oscura
+   Aesthetic: dark editorial, earthy grain
+═══════════════════════════════════════════ */
+
+.footer {
+  position: relative;
+  background-color: #0f1205; /* near-black with olive undertone */
+  color: #fff;
+  overflow: hidden;
+}
+
+/* Subtle grain texture for organic depth */
+.grain {
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+  opacity: 0.4;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Gradient accent line at top */
+.accentBar {
+  height: 3px;
+  background: linear-gradient(90deg,
+    var(--color-primary) 0%,
+    var(--color-yellow) 40%,
+    var(--color-orange) 70%,
+    var(--color-accent-brown) 100%
+  );
+  position: relative;
+  z-index: 2;
+}
+
+/* ── CTA Band ── */
+.ctaBand {
+  position: relative;
+  z-index: 2;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 3.5rem 0;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.ctaInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.ctaText {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.ctaEyebrow {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--color-yellow);
+  font-weight: 600;
+}
+
+.ctaHeadline {
+  font-family: var(--font-primary);
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  color: #fff;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.ctaBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 1rem 2.2rem;
+  border-radius: 50px;
+  background: var(--gradient-accent);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+  transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 8px 25px rgba(232, 154, 64, 0.25);
+}
+
+.ctaBtn:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 15px 35px rgba(232, 154, 64, 0.4);
+}
+
+/* ── Main grid ── */
+.mainGrid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1.4fr;
+  gap: 5rem;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+/* ── Brand column ── */
+.brandCol {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.logoWrapper {
+  display: inline-block;
+  transition: opacity 0.3s ease;
+}
+
+.logoWrapper:hover {
+  opacity: 0.8;
+}
+
+.tagline {
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 1rem;
+  line-height: 1.7;
+  max-width: 300px;
+}
+
+/* The big editorial brand statement */
+.brandStatement {
+  margin-top: 1rem;
+  font-family: var(--font-primary);
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.08);
+  letter-spacing: -1px;
+  user-select: none;
+}
+
+.brandStatement em {
+  font-style: normal;
+  color: rgba(250, 192, 0, 0.12);
+}
+
+/* ── Generic column ── */
+.col {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.colTitle {
+  font-family: var(--font-primary);
+  font-size: 1.1rem;
+  color: var(--color-yellow);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.colTitle::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 30px;
+  height: 2px;
+  background: var(--color-orange);
+  border-radius: 2px;
+}
+
+/* ── Nav links ── */
+.linkList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.navLink {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 1rem;
+  transition: all 0.25s ease;
+}
+
+.navLink:hover {
+  color: #fff;
+  transform: translateX(6px);
+}
+
+.navDot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--color-orange);
+  flex-shrink: 0;
+  opacity: 0.6;
+  transition: opacity 0.25s ease;
+}
+
+.navLink:hover .navDot {
+  opacity: 1;
+}
+
+/* ── Contact list ── */
+.contactList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contactItem {}
+
+.contactLink {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  color: inherit;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  cursor: default;
+}
+
+a.contactLink {
+  cursor: pointer;
+}
+
+a.contactLink:hover {
+  transform: translateX(4px);
+}
+
+a.contactLink:hover .contactIcon {
+  background: var(--color-orange);
+  color: #fff;
+}
+
+.contactIcon {
+  flex-shrink: 0;
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-yellow);
+  transition: all 0.3s ease;
+  margin-top: 2px;
+}
+
+.contactLabel {
+  display: block;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: rgba(255, 255, 255, 0.3);
+  margin-bottom: 0.25rem;
+}
+
+.contactValue {
+  display: block;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.5;
+}
+
+/* ── Bottom bar ── */
+.bottomBar {
+  position: relative;
+  z-index: 2;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 1.75rem 0;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.bottomInner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.copy {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.28);
+}
+
+.credit {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.28);
+}
+
+.menteoLink {
+  color: var(--color-yellow);
+  font-weight: 600;
+  transition: all 0.2s ease;
+  display: inline-block;
+}
+
+.menteoLink:hover {
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+/* ── Responsive ── */
+@media (max-width: 992px) {
+  .mainGrid {
+    grid-template-columns: 1fr 1fr;
+    gap: 3.5rem;
+  }
+  .brandCol {
+    grid-column: 1 / -1;
+  }
+  .brandStatement {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .mainGrid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+  }
+  .ctaInner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .ctaBtn {
+    width: 100%;
+    justify-content: center;
+  }
+  .bottomInner {
+    flex-direction: column;
+    text-align: center;
+  }
+  .brandStatement {
+    font-size: 2rem;
+  }
+}

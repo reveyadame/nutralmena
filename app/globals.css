@@ -1,0 +1,190 @@
+@font-face {
+  font-family: 'Roca One';
+  src: url('/fonts/roca-one-bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  /* Only headings use Roca One — restrict to letters to avoid Flash of Unstyled Text on numbers */
+  unicode-range: U+0041-005A, U+0061-007A, U+00C0-00FF, U+00A1-00BF;
+}
+
+/* Sora cargada via next/font/google en layout.js — disponible como var(--font-sora) */
+
+:root {
+  --color-primary: #444f12;
+  --color-primary-dark: #2c330b;
+  --color-primary-light: #a6b864;
+  --color-accent-brown: #bd612a;
+  --color-dark-brown: #724f27;
+  --color-orange: #e89a40;
+  --color-yellow: #fac000;
+  --color-bg-light: #fcfdfa;
+  --color-white: #ffffff;
+  
+  --font-primary: 'Roca One', 'Segoe UI', Arial, sans-serif;
+  /* Sora: geométrica-moderna, corporativa, legible. Par perfecto para Roca One. */
+  --font-secondary: var(--font-sora), 'Segoe UI', Arial, sans-serif;
+  
+  --shadow-sm: 0 4px 6px rgba(0,0,0,0.05);
+  --shadow-md: 0 10px 20px rgba(0,0,0,0.08);
+  --shadow-lg: 0 20px 40px rgba(0,0,0,0.12);
+  
+  --gradient-primary: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+  --gradient-accent: linear-gradient(135deg, var(--color-accent-brown), var(--color-orange));
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-secondary);
+  color: var(--color-primary);
+  background-color: var(--color-bg-light);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-primary);
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+/* Utilities */
+.container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1.1rem 2.5rem;
+  border-radius: 50px;
+  font-weight: bold;
+  font-size: 1.05rem;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: none;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  letter-spacing: 0.5px;
+}
+
+.btn-primary {
+  background-color: var(--color-orange);
+  color: #fff;
+  box-shadow: 0 8px 25px rgba(232, 154, 64, 0.35);
+}
+
+.btn-primary:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(232, 154, 64, 0.5);
+  background-color: #f19f4a;
+}
+
+.btn-secondary {
+  background-color: var(--color-primary);
+  color: #fff;
+  box-shadow: 0 8px 25px rgba(68, 79, 18, 0.25);
+}
+
+.btn-secondary:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(68, 79, 18, 0.4);
+  background-color: var(--color-primary-dark);
+}
+
+.section {
+  padding: 100px 0;
+  position: relative;
+}
+
+.section-title {
+  text-align: center;
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  color: var(--color-primary);
+  margin-bottom: 4rem;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 100px;
+  height: 6px;
+  background: var(--gradient-accent);
+  margin: 1.5rem auto 0;
+  border-radius: 10px;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fadeInUp 1s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
+
+/* Micro-interactions */
+.hover-lift {
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.hover-lift:hover {
+  transform: translateY(-8px);
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Watermark global */
+.watermark {
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.03;
+}
+
+@media (max-width: 768px) {
+  .section { padding: 60px 0; }
+  .section-title { font-size: 2.2rem; margin-bottom: 3rem; }
+  .container { padding: 0 1.5rem; }
+}

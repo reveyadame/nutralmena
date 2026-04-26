@@ -1,0 +1,185 @@
+.products {
+  background-color: #f4f6ec;
+  position: relative;
+  overflow: hidden;
+  padding: 120px 0;
+}
+
+.watermark {
+  position: absolute;
+  top: 10%;
+  left: -5%;
+  width: 40%;
+  height: 40%;
+  background-image: url('/images/logo.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: 0;
+  transform: rotate(-15deg);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: #555;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.subtitle strong {
+  color: var(--color-primary);
+  display: block;
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  padding: 0.5rem 1.5rem;
+  background: rgba(189, 97, 42, 0.1);
+  border-radius: 50px;
+  display: inline-block;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.card {
+  background: #fff;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+  transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+  border: 1px solid rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 30px 60px rgba(68, 79, 18, 0.12);
+}
+
+.cardImages {
+  background: linear-gradient(180deg, #fcfdfa 0%, #eef1e6 100%);
+  padding: 3rem 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  min-height: 280px;
+  position: relative;
+}
+
+.cardImages::after {
+  content: '';
+  position: absolute;
+  bottom: 20px;
+  width: 60%;
+  height: 20px;
+  background: rgba(0,0,0,0.1);
+  filter: blur(15px);
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.sackContainer {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  width: 100%;
+}
+
+.sackLarge {
+  object-fit: contain;
+  z-index: 2;
+  transform: translateX(15px);
+  transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.sackSmall {
+  object-fit: contain;
+  z-index: 1;
+  transform: translateX(-25px) scale(0.85);
+  opacity: 0.8;
+  transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.card:hover .sackLarge {
+  transform: translateX(25px) scale(1.08) rotate(2deg);
+}
+
+.card:hover .sackSmall {
+  transform: translateX(-40px) scale(0.95) rotate(-5deg);
+  opacity: 1;
+}
+
+.cardContent {
+  padding: 2.5rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.productName {
+  font-size: 1.75rem;
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+}
+
+.productDesc {
+  color: #666;
+  font-size: 1.05rem;
+  margin-bottom: 2rem;
+  flex-grow: 1;
+}
+
+.presentations {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #f4f6ec;
+  color: var(--color-primary);
+  padding: 0.6rem 1.2rem;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  border: 1px solid rgba(68, 79, 18, 0.1);
+  transition: all 0.3s ease;
+}
+
+.card:hover .badge {
+  background-color: var(--color-primary);
+  color: #fff;
+}
+
+.ctaWrapper {
+  text-align: center;
+  margin-top: 5rem;
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 576px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

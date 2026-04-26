@@ -1,0 +1,88 @@
+Quiero que actúes como un experto en desarrollo web, diseño UI/UX, arquitectura de software y marketing para ayudarme a construir una landing page corporativa para una empresa nueva dedicada al procesamiento y venta de maíz en distintas presentaciones.
+Objetivo del sitio
+El objetivo principal es posicionar la marca, transmitir confianza y comunicar claramente el origen, proceso y valor del producto. No es un e-commerce por ahora, solo informativo.
+Estructura del sitio
+Desarrolla una landing page con las siguientes secciones:
+Hero / Inicio 
+Mensaje claro de valor 
+Imagen representativa (puedes usar bancos de imágenes si es necesario) 
+Call to Action (ej: contacto) 
+Sobre Nosotros 
+Historia: productores de maíz que decidieron procesar y vender directamente 
+Enfoque en experiencia, control de calidad y cercanía con el productor 
+Nuestros Productos 
+Tipos de maíz: 
+Maíz entero 
+Maíz quebrado 
+Maíz rolado 
+Maíz mezclado 
+Presentaciones: 
+25 kg 
+40 kg 
+Considerar que el costal es el mismo, solo cambia la selección marcada 
+Mostrar visualmente los costales 
+Contacto 
+Formulario (nombre, teléfono, mensaje) 
+Información básica (teléfono, ubicación si aplica) 
+Branding (muy importante)
+Dentro de una carpeta te proporcionaré:
+Mockups de los costales (25 kg y 40 kg) 
+Logotipos en diferentes versiones 
+Tipografías oficiales del branding 
+Debes utilizar estos recursos correctamente.
+Paleta de colores:
+#444f12
+#a6b864
+#bd612a
+#724f27
+#e89a40
+#fac000
+Personalidad de marca:
+Fuerte
+Confiable
+Experta en el campo
+Productiva
+Cercana al productor
+El diseño debe reflejar estos valores (evitar estilos genéricos o tech, debe sentirse más industrial/agro pero moderno).
+Stack tecnológico
+HTML 
+CSS 
+JavaScript 
+Puedes usar Next.js si consideras que aporta valor (estructura, SEO, performance) 
+Requerimientos técnicos
+Quiero que uses todas tus habilidades como:
+Arquitecto de software 
+Diseñador UI/UX 
+Desarrollador frontend 
+Especialista en marketing 
+Y entregues:
+Estructura del proyecto 
+Organización de carpetas clara (components, assets, styles, etc.) 
+Código limpio 
+Bien estructurado 
+Escalable 
+Comentado cuando sea necesario 
+Responsive design 
+Mobile-first 
+Buenas prácticas 
+Optimización de imágenes 
+SEO básico 
+Accesibilidad 
+Estilos 
+Sistema de estilos consistente 
+Uso correcto de tipografías del branding 
+Jerarquía visual clara 
+Imágenes 
+Puedes usar bancos de imágenes si hacen falta (relacionadas con campo, maíz, ganado, etc.) 
+Marketing y copywriting 
+Utiliza tus habilidades de marketing para crear copys persuasivos 
+Los textos deben ayudar a posicionar la marca 
+Enfócate en comunicar confianza, experiencia y cercanía con el productor 
+Propón mensajes claros, directos y orientados a conversión 
+Entregables esperados
+Guía paso a paso para construir el proyecto 
+Estructura de carpetas 
+Código base listo para desarrollo 
+Propuesta de copys para cada sección 
+Recomendaciones de mejora a futuro (por ejemplo, cómo escalar a e-commerce) 
+Si detectas oportunidades para mejorar la presentación, narrativa o estructura del sitio para hacerlo más efectivo en branding, aplícalas directamente.

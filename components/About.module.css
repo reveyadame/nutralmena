@@ -1,0 +1,186 @@
+.about {
+  background-color: #fcfdfa;
+  overflow: hidden;
+  padding: 100px 0;
+}
+
+.aboutContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+.imageGrid {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.mainImage {
+  position: relative;
+  width: 90%;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 30px 60px rgba(68, 79, 18, 0.15);
+  z-index: 2;
+}
+
+.img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.mainImage:hover .img {
+  transform: scale(1.05);
+}
+
+.secondaryImage {
+  position: absolute;
+  bottom: -40px;
+  right: 0;
+  width: 55%;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+  z-index: 3;
+  border: 6px solid #fff;
+}
+
+.experienceBadge {
+  position: absolute;
+  top: 30px;
+  left: -20px;
+  background: var(--gradient-primary);
+  color: #fff;
+  padding: 1.5rem;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 10px 25px rgba(189, 97, 42, 0.3);
+  z-index: 4;
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.years {
+  font-family: 'Roca One', serif;
+  font-size: 2.5rem;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.expText {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+  margin-top: 5px;
+}
+
+.brandWatermark {
+  position: absolute;
+  top: -40px;
+  left: 20%;
+  z-index: 1;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.description {
+  font-size: 1.15rem;
+  color: #555;
+  line-height: 1.8;
+}
+
+.features {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.featureItem {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+  padding: 1.5rem;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+  transition: all 0.3s ease;
+  border-left: 4px solid transparent;
+}
+
+.featureItem:hover {
+  transform: translateX(10px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+  border-left-color: var(--color-orange);
+}
+
+.iconBox {
+  flex-shrink: 0;
+  width: 60px;
+  height: 60px;
+  background: #f4f6ec;
+  color: var(--color-primary);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.featureItem:hover .iconBox {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.featureItem h3 {
+  font-size: 1.25rem;
+  color: var(--color-primary-dark);
+  margin-bottom: 0.25rem;
+}
+
+.featureItem p {
+  color: #666;
+  font-size: 1rem;
+}
+
+@media (max-width: 992px) {
+  .aboutContainer {
+    grid-template-columns: 1fr;
+    gap: 6rem;
+  }
+  
+  .imageGrid {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 576px) {
+  .secondaryImage {
+    width: 65%;
+    bottom: -20px;
+  }
+  
+  .experienceBadge {
+    left: 0;
+    top: 10px;
+    padding: 1rem;
+  }
+  
+  .years { font-size: 1.8rem; }
+}
