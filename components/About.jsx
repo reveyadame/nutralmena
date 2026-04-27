@@ -8,13 +8,13 @@ export default function About() {
       <div className={`container ${styles.aboutContainer}`}>
         <div className={styles.imageGrid}>
           <div className={styles.mainImage}>
-            <Image src="/images/processing.png" alt="Procesamiento de Maíz" width={600} height={400} className={styles.img} />
+            <Image src="/images/processing.webp" alt="Procesamiento de Maíz" width={600} height={400} className={styles.img} />
             <div className={styles.experienceBadge}>
               <span className={styles.expText}>Comprometidos con<br />el Campo.</span>
             </div>
           </div>
           <div className={styles.secondaryImage}>
-            <Image src="/images/about_hands.png" alt="Campo de Maíz" width={400} height={260} className={styles.img} />
+            <Image src="/images/about_hands.webp" alt="Campo de Maíz" width={400} height={260} className={styles.img} />
           </div>
         </div>
 

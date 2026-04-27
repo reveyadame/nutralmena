@@ -7,7 +7,8 @@
 .hero {
   position: relative;
   height: 100vh;
-  min-height: 700px;
+  height: 100dvh;
+  min-height: 600px;
   display: flex;
   overflow: hidden;
 }
@@ -338,6 +339,32 @@
   50% { transform: rotate(-8deg) translateX(20px) translateY(-12px); }
 }
 
+/* ── Mobile arrows (hidden on desktop) ── */
+.mobileArrows {
+  display: none;
+}
+
+.arrowBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  color: #fff;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  flex-shrink: 0;
+}
+
+.arrowBtn:hover,
+.arrowBtn:active {
+  background: rgba(250, 192, 0, 0.2);
+  border-color: var(--color-yellow);
+}
+
 /* ── Responsive ── */
 @media (max-width: 1100px) {
   .contentPanel {
@@ -352,32 +379,155 @@
 }
 
 @media (max-width: 900px) {
-  .hero { flex-direction: column; }
+  .hero { 
+    flex-direction: column; 
+    height: auto;
+    min-height: 100dvh;
+  }
+
+  .imagePanel {
+    position: relative;
+    width: 100%;
+    height: 50vh;
+    min-height: 400px;
+    opacity: 1; /* Bring back full visibility */
+  }
+
+  /* Fade out bottom of image into the dark content panel */
+  .imagePanel::before { 
+    display: block; 
+    background: linear-gradient(to top, #0a0f00 0%, transparent 40%);
+  }
 
   .contentPanel {
     width: 100%;
     min-width: 0;
     clip-path: none;
-    padding: 120px 1.5rem 60px;
+    padding: 0 1.5rem 100px;
+    justify-content: flex-start;
+    flex: 1;
+    z-index: 5;
   }
-
-  .imagePanel {
-    position: absolute;
-    width: 100%;
-    top: 0;
-    height: 100%;
-    opacity: 0.35;
-  }
-
-  .imagePanel::before { display: none; }
 
   .sackBridge {
-    display: none;
+    display: block;
+    width: 220px;
+    height: 320px;
+    left: 50%;
+    transform: translateX(-50%);
+    top: calc(50vh - 180px); /* Straddles the image and text */
+    bottom: auto;
+    z-index: 10;
+  }
+
+  .sackSide {
+    display: none; /* Hide the smaller sack on mobile for cleaner look */
+  }
+
+  .sackMain {
+    right: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 100%;
+    animation: sackFloatMobile 8s ease-in-out infinite;
   }
 
   .ghostNum {
-    font-size: 8rem;
+    font-size: 7rem;
     right: 1rem;
-    top: 100px;
+    top: -20px;
+    opacity: 0.8;
+    z-index: 1;
+  }
+
+  .textContent {
+    margin-top: 140px; /* Leave space for the overlapping sack */
+  }
+
+  .indicators {
+    bottom: 28px;
+    gap: 1rem;
+  }
+
+  .mobileArrows {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    margin-left: auto;
+  }
+}
+
+@keyframes sackFloatMobile {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(-15px); }
+}
+
+/* ── Phone (small screens) ── */
+@media (max-width: 480px) {
+  .hero {
+    min-height: 100dvh;
+  }
+
+  .imagePanel {
+    height: 45vh;
+    min-height: 360px;
+  }
+
+  .sackBridge {
+    top: calc(45vh - 160px);
+    width: 180px;
+    height: 280px;
+  }
+
+  .contentPanel {
+    padding: 0 1.25rem 95px;
+  }
+
+  .ghostNum {
+    font-size: 5.5rem;
+    top: -10px;
+    right: 0.75rem;
+  }
+
+  .textContent {
+    margin-top: 110px;
+    gap: 0.9rem;
+  }
+
+  .titleLine {
+    font-size: clamp(2.2rem, 9vw, 2.6rem);
+  }
+
+  .subtitle {
+    font-size: 0.875rem;
+    max-width: 100%;
+  }
+
+  .ctaRow {
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+  }
+
+  .btnPrimary,
+  .btnGhost {
+    width: 100%;
+    justify-content: center;
+    padding: 0.85rem 1.5rem;
+  }
+
+  .indicators {
+    bottom: 20px;
+    gap: 0.75rem;
+    left: 1.25rem;
+  }
+
+  .indicatorTrack {
+    width: 40px;
+  }
+
+  .indicatorLabel {
+    font-size: 0.7rem;
   }
 }

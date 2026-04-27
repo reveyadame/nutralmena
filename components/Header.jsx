@@ -22,12 +22,20 @@ export default function Header() {
       <div className={`container ${styles.headerContainer}`}>
         <Link href="/" className={styles.logoContainer}>
           <Image
-            src="/images/logo-header.png"
+            src="/images/logo-header.webp"
             alt="Nutralmena Logo"
             width={140}
             height={80}
             style={{ objectFit: 'contain' }}
             className={styles.logo}
+          />
+          <Image
+            src="/images/logo-mobile.webp"
+            alt="Nutralmena Logo"
+            width={140}
+            height={80}
+            style={{ objectFit: 'contain' }}
+            className={styles.logoMobile}
           />
         </Link>
         <nav className={`${styles.nav} ${mobileMenuOpen ? styles.navOpen : ""}`}>
@@ -36,7 +44,7 @@ export default function Header() {
           <a href="#productos" className={styles.navLink} onClick={() => setMobileMenuOpen(false)}>Productos</a>
           <a href="#contacto" className={`btn btn-primary ${styles.contactBtn}`} onClick={() => setMobileMenuOpen(false)}>Contacto</a>
         </nav>
-        <button className={styles.mobileToggle} onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+        <button className={`${styles.mobileToggle}`} onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
           {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
       </div>

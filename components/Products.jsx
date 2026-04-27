@@ -47,8 +47,8 @@ export default function Products() {
             <div key={product.id} className={styles.card} style={{'--product-color': product.color}}>
               <div className={styles.cardImages}>
                 <div className={styles.sackContainer}>
-                  <Image src="/images/costal_40kg.png" alt="Costal 40kg" width={200} height={300} className={styles.sackLarge} />
-                  <Image src="/images/costal_25kg.png" alt="Costal 25kg" width={150} height={220} className={styles.sackSmall} />
+                  <Image src="/images/costal_40kg.webp" alt="Costal 40kg" width={200} height={300} className={styles.sackLarge} />
+                  <Image src="/images/costal_25kg.webp" alt="Costal 25kg" width={150} height={220} className={styles.sackSmall} />
                 </div>
               </div>
               <div className={styles.cardContent}>

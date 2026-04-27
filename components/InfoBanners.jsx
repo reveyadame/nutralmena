@@ -4,7 +4,7 @@ import styles from "./InfoBanners.module.css";
 const banners = [
   {
     id: "calidad",
-    image: "/images/grafico1.png",
+    image: "/images/grafico1.webp",
     align: "left",
     badge: "Selección de Granos",
     title: "Solo los Mejores Granos Llegan a tu Negocio",
@@ -14,7 +14,7 @@ const banners = [
   },
   {
     id: "proceso",
-    image: "/images/grafico2.png",
+    image: "/images/grafico2.webp",
     align: "right",
     badge: "Procesamiento Industrial",
     title: "De la Cosecha al Costal con Tecnología de Punta",
@@ -24,7 +24,7 @@ const banners = [
   },
   {
     id: "variedades",
-    image: "/images/grafico3.png",
+    image: "/images/grafico3.webp",
     align: "left",
     badge: "Variedad de Productos",
     title: "Cuatro Presentaciones para Cada Necesidad",

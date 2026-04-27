@@ -1,88 +1,563 @@
-Quiero que actúes como un experto en desarrollo web, diseño UI/UX, arquitectura de software y marketing para ayudarme a construir una landing page corporativa para una empresa nueva dedicada al procesamiento y venta de maíz en distintas presentaciones.
-Objetivo del sitio
-El objetivo principal es posicionar la marca, transmitir confianza y comunicar claramente el origen, proceso y valor del producto. No es un e-commerce por ahora, solo informativo.
-Estructura del sitio
-Desarrolla una landing page con las siguientes secciones:
-Hero / Inicio 
-Mensaje claro de valor 
-Imagen representativa (puedes usar bancos de imágenes si es necesario) 
-Call to Action (ej: contacto) 
-Sobre Nosotros 
-Historia: productores de maíz que decidieron procesar y vender directamente 
-Enfoque en experiencia, control de calidad y cercanía con el productor 
-Nuestros Productos 
-Tipos de maíz: 
-Maíz entero 
-Maíz quebrado 
-Maíz rolado 
-Maíz mezclado 
-Presentaciones: 
-25 kg 
-40 kg 
-Considerar que el costal es el mismo, solo cambia la selección marcada 
-Mostrar visualmente los costales 
-Contacto 
-Formulario (nombre, teléfono, mensaje) 
-Información básica (teléfono, ubicación si aplica) 
-Branding (muy importante)
-Dentro de una carpeta te proporcionaré:
-Mockups de los costales (25 kg y 40 kg) 
-Logotipos en diferentes versiones 
-Tipografías oficiales del branding 
-Debes utilizar estos recursos correctamente.
-Paleta de colores:
-#444f12
-#a6b864
-#bd612a
-#724f27
-#e89a40
-#fac000
-Personalidad de marca:
-Fuerte
-Confiable
-Experta en el campo
-Productiva
-Cercana al productor
-El diseño debe reflejar estos valores (evitar estilos genéricos o tech, debe sentirse más industrial/agro pero moderno).
-Stack tecnológico
-HTML 
-CSS 
-JavaScript 
-Puedes usar Next.js si consideras que aporta valor (estructura, SEO, performance) 
-Requerimientos técnicos
-Quiero que uses todas tus habilidades como:
-Arquitecto de software 
-Diseñador UI/UX 
-Desarrollador frontend 
-Especialista en marketing 
-Y entregues:
-Estructura del proyecto 
-Organización de carpetas clara (components, assets, styles, etc.) 
-Código limpio 
-Bien estructurado 
-Escalable 
-Comentado cuando sea necesario 
-Responsive design 
-Mobile-first 
-Buenas prácticas 
-Optimización de imágenes 
-SEO básico 
-Accesibilidad 
-Estilos 
-Sistema de estilos consistente 
-Uso correcto de tipografías del branding 
-Jerarquía visual clara 
-Imágenes 
-Puedes usar bancos de imágenes si hacen falta (relacionadas con campo, maíz, ganado, etc.) 
-Marketing y copywriting 
-Utiliza tus habilidades de marketing para crear copys persuasivos 
-Los textos deben ayudar a posicionar la marca 
-Enfócate en comunicar confianza, experiencia y cercanía con el productor 
-Propón mensajes claros, directos y orientados a conversión 
-Entregables esperados
-Guía paso a paso para construir el proyecto 
-Estructura de carpetas 
-Código base listo para desarrollo 
-Propuesta de copys para cada sección 
-Recomendaciones de mejora a futuro (por ejemplo, cómo escalar a e-commerce) 
-Si detectas oportunidades para mejorar la presentación, narrativa o estructura del sitio para hacerlo más efectivo en branding, aplícalas directamente.
+=======================================================================
+  NUTRALMENA — ARCHIVO DE CONTEXTO DEL PROYECTO
+  Generado: 2026-04-26 | Versión de código: rama master
+=======================================================================
+
+Lee este archivo completo antes de tocar cualquier línea de código.
+Es el único documento de referencia autorizado del proyecto.
+
+
+-----------------------------------------------------------------------
+1. VISIÓN GENERAL
+-----------------------------------------------------------------------
+
+Nombre:      Nutralmena
+Slogan:      Del Campo a tu Negocio
+URL:         https://nutralmena.com
+Tipo:        Landing page corporativa (una sola página / one-page)
+Stack:       Next.js 16.2.4 · React 19.2.4 · CSS Modules · Nodemailer
+Hosting:     Plesk (servidor HTTP personalizado en server.js)
+Idioma:      Español (es_MX)
+
+Negocio:
+  - Procesamiento y venta de maíz (Entero, Quebrado, Rolado, Mezclado)
+  - Presentaciones: costales de 25 kg y 40 kg
+  - Mercado: ganaderos, avicultores, mayoristas, distribuidores
+  - Región: Cuauhtémoc, Chihuahua, México
+  - Sin intermediarios: productor → cliente directo
+  - Teléfono: +52 625 104 1330
+  - Correo negocio: ventas@nutralmena.com
+  - Correo sistema (recibe formulario): info@nutralmena.com
+  - WhatsApp: wa.me/526251041330
+  - Dirección: Campo 106 Casa 111, Cuauhtémoc, Chih 31610
+  - Horario: Lun–Vie 8:00–18:00, Sáb 9:00–14:00
+  - Desarrollado por: Menteo.mx (suscripciones@menteo.mx)
+
+
+-----------------------------------------------------------------------
+2. ESTRUCTURA DE ARCHIVOS
+-----------------------------------------------------------------------
+
+/Nutralmena/
+├── app/
+│   ├── api/contact/route.js      ← API POST para formulario de contacto
+│   ├── globals.css               ← Design system: variables, utilities, animaciones
+│   ├── icon.png                  ← Favicon (file-based, Next.js App Router convention)
+│   ├── layout.js                 ← Root layout: fuentes, metadata, WhatsAppButton
+│   └── page.js                   ← Única página: importa y ordena todos los componentes
+├── components/
+│   ├── Header.jsx + .module.css
+│   ├── HeroSliderV2.jsx + .module.css
+│   ├── About.jsx + .module.css
+│   ├── Products.jsx + .module.css
+│   ├── InfoBanners.jsx + .module.css
+│   ├── GraficoBanners.jsx + .module.css
+│   ├── Contact.jsx + .module.css
+│   ├── Footer.jsx + .module.css
+│   └── WhatsAppButton.jsx + .module.css
+├── public/
+│   ├── fonts/roca-one-bold.ttf   ← Fuente personalizada para headings
+│   └── images/                   ← Ver sección 9
+├── next.config.mjs
+├── package.json
+├── server.js                     ← Adaptador HTTP para Plesk
+├── jsconfig.json                 ← Alias @/* → ./
+├── .env.production               ← NODE_ENV=production
+└── Contexto.txt                  ← Este archivo
+
+
+-----------------------------------------------------------------------
+3. DEPENDENCIAS (package.json)
+-----------------------------------------------------------------------
+
+{
+  "name": "nutralmena-app",
+  "version": "0.1.0",
+  "private": true,
+  "engines": { "node": ">=25.0.0" },
+  "scripts": {
+    "dev":   "next dev",
+    "build": "next build",
+    "start": "node server.js",
+    "lint":  "eslint"
+  },
+  "dependencies": {
+    "lucide-react": "^1.11.0",
+    "next":         "16.2.4",
+    "nodemailer":   "^8.0.6",
+    "react":        "19.2.4",
+    "react-dom":    "19.2.4",
+    "sharp":        "^0.34.5"
+  },
+  "devDependencies": {
+    "eslint":              "^9",
+    "eslint-config-next":  "16.2.4"
+  }
+}
+
+IMPORTANTE: Este es Next.js 16 con React 19. Las APIs pueden diferir de
+versiones anteriores. Consultar node_modules/next/dist/docs/ antes de
+implementar features nuevas.
+
+
+-----------------------------------------------------------------------
+4. NEXT.CONFIG.MJS
+-----------------------------------------------------------------------
+
+const nextConfig = {
+  compress: true,           // Gzip habilitado
+  poweredByHeader: false,   // Oculta X-Powered-By (seguridad)
+  images: {
+    formats: ["image/avif", "image/webp"],  // Conversión automática
+  },
+};
+
+
+-----------------------------------------------------------------------
+5. DESIGN SYSTEM (app/globals.css)
+-----------------------------------------------------------------------
+
+FUENTES
+  Headings (h1-h6): Roca One Bold → @font-face desde /fonts/roca-one-bold.ttf
+                    unicode-range restringido a letras (evita FOIT en números)
+  Body/UI:          Sora → Google Fonts via next/font, variable --font-sora
+                    Pesos: 300, 400, 500, 600, 700, 800
+
+PALETA DE COLORES
+  --color-primary:       #444f12  (verde olivo, color principal de marca)
+  --color-primary-dark:  #2c330b  (verde oscuro)
+  --color-primary-light: #a6b864  (verde claro)
+  --color-accent-brown:  #bd612a  (marrón terroso)
+  --color-dark-brown:    #724f27  (marrón oscuro)
+  --color-orange:        #e89a40  (naranja, color de CTAs)
+  --color-yellow:        #fac000  (amarillo vibrante)
+  --color-bg-light:      #fcfdfa  (blanco hueso, fondo general)
+  --color-white:         #ffffff
+
+SOMBRAS
+  --shadow-sm: 0 4px 6px rgba(0,0,0,0.05)
+  --shadow-md: 0 10px 20px rgba(0,0,0,0.08)
+  --shadow-lg: 0 20px 40px rgba(0,0,0,0.12)
+
+GRADIENTES
+  --gradient-primary: linear-gradient(135deg, #444f12, #a6b864)
+  --gradient-accent:  linear-gradient(135deg, #bd612a, #e89a40)
+
+BOTONES (clases globales)
+  .btn            → base: pill shape (border-radius 50px), flex, gap
+  .btn-primary    → naranja (#e89a40), hover: translateY(-5px) + sombra
+  .btn-secondary  → verde (#444f12), hover: translateY(-5px) + sombra
+
+UTILIDADES GLOBALES
+  .container    → max-width 1240px, auto margins, padding 2rem (1.5rem móvil)
+  .section      → padding 100px 0 (60px en móvil)
+  .section-title → centrado, clamp(2.5rem,5vw,3.5rem), línea decorativa debajo
+  .animate-fade-up → fadeInUp 1s (opacity 0→1 + translateY 40px→0)
+  .delay-1/2/3  → animation-delay 0.1/0.2/0.3s
+  .hover-lift   → translateY(-8px) en hover
+  .glass        → backdrop-filter blur(12px), fondo blanco 80%, borde sutil
+  .watermark    → posición absoluta, pointer-events none, opacity 0.03
+
+BREAKPOINTS
+  Móvil:         ≤ 576px
+  Tablet:        577px – 991px
+  Desktop:       ≥ 992px
+  Small mobile:  ≤ 480px
+
+
+-----------------------------------------------------------------------
+6. COMPONENTES
+-----------------------------------------------------------------------
+
+──────────────────────────────────────────────
+6.1 Header.jsx
+──────────────────────────────────────────────
+"use client" — requiere estado del lado del cliente.
+
+Estado:
+  isScrolled       → true cuando window.scrollY > 20
+  mobileMenuOpen   → true cuando el menú hamburguesa está abierto
+
+Comportamiento:
+  - Header fijo (position: fixed, z-index 1000, height 90px)
+  - Al hacer scroll: height → 75px, fondo blanco translúcido con blur,
+    sombra sutil, nav links cambian a --color-primary
+  - Desktop (≥992px): nav horizontal, logo-header.webp visible
+  - Móvil (<992px):
+      * Antes de scroll: muestra logo-mobile.webp (versión blanca),
+        botón hamburguesa en --color-white
+      * Al hacer scroll: muestra logo-header.webp (versión de color),
+        botón hamburguesa en --color-primary
+      * Menú: slide-in desde la derecha (80% ancho, 100vh, fondo blanco)
+
+Nav links (scroll a secciones ancla):
+  #inicio · #nosotros · #productos · #contacto (este último es btn-primary)
+
+Logo images:
+  /images/logo-header.webp → desktop + móvil post-scroll
+  /images/logo-mobile.webp → móvil pre-scroll (versión blanca)
+
+──────────────────────────────────────────────
+6.2 HeroSliderV2.jsx
+──────────────────────────────────────────────
+"use client" — autoplay y touch events.
+
+3 slides con auto-play de 7 segundos. Estructura de cada slide:
+  - Panel izquierdo: badge, título (h1), descripción, botones CTA
+  - Panel derecho: imagen de fondo + mockup de costal flotando
+
+Slides:
+  1. "Del Campo a tu Negocio" — bg: hero_corn_field.webp — costal_40kg.webp
+  2. "Procesado con Tecnología" — bg: processing.webp — costal_25kg.webp
+  3. "Calidad que se Ve y se Siente" — bg: corn_quality_control.webp — costal_40kg.webp
+
+Animaciones:
+  - Texto: staggered entrance (badge, título, descripción, botones)
+  - Imagen de fondo: crossfade
+  - Costal: posición "puente" entre paneles + float continuo
+  - Indicadores de progreso: barras con fill animado
+
+Touch/Swipe: detecta diferencia > 50px en touchStart/touchEnd para cambiar slide
+
+──────────────────────────────────────────────
+6.3 About.jsx
+──────────────────────────────────────────────
+Servidor (sin "use client").
+
+Layout: 2 columnas (imágenes | contenido)
+
+Imágenes:
+  - Principal: /images/processing.webp (600×400, con badge flotante)
+  - Secundaria: /images/about_hands.webp (400×260, superpuesta)
+  - Badge: "Comprometidos con el Campo." con animación float
+
+Contenido:
+  - Título: "Compromiso con la Tierra"
+  - Párrafo descriptivo
+  - 3 feature items con iconos lucide-react:
+      Sprout       → "Origen Directo"
+      ShieldCheck  → "Calidad Certificada"
+      Handshake    → "Trato Personalizado"
+
+──────────────────────────────────────────────
+6.4 Products.jsx
+──────────────────────────────────────────────
+Servidor (sin "use client").
+
+4 tarjetas de productos en grid auto-fit (minmax 280px):
+  Maíz Entero    → color: --color-yellow (#fac000)
+  Maíz Quebrado  → color: --color-orange (#e89a40)
+  Maíz Rolado    → color: --color-accent-brown (#bd612a)
+  Maíz Mezclado  → color: --color-dark-brown (#724f27)
+
+Cada tarjeta:
+  - Mockup: costal_40kg.webp (grande) + costal_25kg.webp (pequeño, solapado)
+  - Nombre, descripción
+  - Badges: "✓ 25 kg" y "✓ 40 kg" (icono CheckCircle2)
+
+CTA debajo del grid: "Solicitar Cotización Mayorista" → #contacto
+
+──────────────────────────────────────────────
+6.5 InfoBanners.jsx
+──────────────────────────────────────────────
+Servidor (sin "use client").
+
+3 banners de ancho completo, alternando imagen izquierda/derecha:
+
+Banner 1 (align: left)
+  Imagen: grafico1.webp
+  Badge: "Selección de Granos"
+  Título: "Solo los Mejores Granos Llegan a tu Negocio"
+  CTA: "Ver Productos" → #productos
+
+Banner 2 (align: right)
+  Imagen: grafico2.webp
+  Badge: "Procesamiento Industrial"
+  Título: "De la Cosecha al Costal con Tecnología de Punta"
+  CTA: "Conocer el Proceso" → #nosotros
+
+Banner 3 (align: left)
+  Imagen: grafico3.webp
+  Badge: "Variedad de Productos"
+  Título: "Cuatro Presentaciones para Cada Necesidad"
+  CTA: "Ver Catálogo" → #productos
+
+Técnica de inversión: CSS `direction: rtl` en paneles de imagen derecha.
+
+──────────────────────────────────────────────
+6.6 GraficoBanners.jsx
+──────────────────────────────────────────────
+Servidor (sin "use client").
+
+3 tarjetas en grid, con texto "Por Que Elegir Nutralmena":
+
+Tarjeta 1: CheckCircle2 — "Maíz de Calidad Superior"
+  Puntos: Pureza garantizada · Control humedad · Sin impurezas
+
+Tarjeta 2: MapPin — "Producido en la Región"
+  Puntos: Sin intermediarios · Frescura de cosecha
+
+Tarjeta 3: Package — "Varias Presentaciones"
+  Puntos: 4 tipos de proceso · 25 kg y 40 kg · Precio mayoreo
+
+──────────────────────────────────────────────
+6.7 Contact.jsx
+──────────────────────────────────────────────
+"use client" — estado del formulario.
+
+Estado: formData { name, phone, message } · status { loading, success, error }
+
+Layout: 2 columnas (info | formulario)
+
+Info contacto:
+  Phone  → +52 625 104 1330
+  Mail   → ventas@nutralmena.com
+  MapPin → Campo 106 Casa 111, Cuauhtémoc, Chih 31610
+
+Formulario:
+  Campos: Nombre (text, required) · Teléfono (tel, required) · Mensaje (textarea, required)
+  Submit: POST /api/contact con JSON { name, phone, message }
+  Éxito: mensaje verde 5 segundos, limpia formulario
+  Error: mensaje naranja persistente
+
+──────────────────────────────────────────────
+6.8 Footer.jsx
+──────────────────────────────────────────────
+Servidor (sin "use client").
+
+Estructura:
+  1. Grain texture overlay (decorativo, aria-hidden)
+  2. Accent bar (gradiente superior)
+  3. CTA Band: "¿Listo para abastecer tu negocio?" + "Solicitar cotización" → #contacto
+  4. Main grid (3 columnas):
+     - Columna marca: logo-footer.webp (filter brightness(0) invert → blanco),
+       tagline, "Del Campo / a tu Negocio."
+     - Columna navegación: Inicio, Nuestra Historia, Catálogo, Contacto y Pedidos
+     - Columna contacto: Phone, Mail, MapPin, Clock (con valores y hrefs)
+  5. Bottom bar: © año + "Desarrollado por Menteo.mx" (https://menteo.mx)
+
+logo-footer.webp se renderiza blanco con: filter: "brightness(0) invert(1)"
+
+──────────────────────────────────────────────
+6.9 WhatsAppButton.jsx
+──────────────────────────────────────────────
+Servidor (sin "use client") — renderizado en layout.js (siempre visible).
+
+Botón flotante fijo (bottom-right, z-index 99999).
+Ícono: SVG personalizado (WhatsApp no está en lucide-react por trademark).
+Link: https://wa.me/526251041330 (target="_blank")
+Tooltip: "Chatea con nosotros"
+Animación: pulsing + scale en hover. Móvil: tamaño reducido, tooltip oculto.
+
+
+-----------------------------------------------------------------------
+7. API (app/api/contact/route.js)
+-----------------------------------------------------------------------
+
+Endpoint:  POST /api/contact
+Body JSON: { name: string, phone: string, message: string }
+Respuesta éxito: 200 { success: true, message: "Mensaje enviado exitosamente" }
+Respuesta error: 400 si faltan campos · 500 si falla SMTP
+
+Flujo:
+  1. Valida que name, phone y message no estén vacíos
+  2. Crea transporter de Nodemailer con variables de entorno
+  3. Envía email HTML + texto a info@nutralmena.com
+  4. From: SMTP_FROM o '"Nutralmena Web" <info@nutralmena.com>'
+
+Variables de entorno requeridas:
+  SMTP_HOST    → servidor SMTP (default: localhost)
+  SMTP_PORT    → puerto (default: 587)
+  SMTP_SECURE  → "true" para SSL/TLS (default: false)
+  SMTP_USER    → usuario SMTP (opcional, sin auth si vacío)
+  SMTP_PASS    → contraseña SMTP
+  SMTP_FROM    → dirección From (opcional)
+
+Email enviado a: info@nutralmena.com
+Asunto: "Nuevo mensaje de contacto de {name}"
+Cuerpo: Nombre, Teléfono, Mensaje (HTML y texto plano)
+
+
+-----------------------------------------------------------------------
+8. LAYOUT Y METADATA (app/layout.js)
+-----------------------------------------------------------------------
+
+Fuente: Sora (Google Fonts), pesos 300-800, variable --font-sora
+        display: "swap", subsets: ["latin"]
+
+Metadata:
+  metadataBase: new URL("https://nutralmena.com")  ← CRÍTICO para URLs OG absolutas
+  title:        "Nutralmena - Del Campo a tu Negocio"
+  description:  "Procesamiento y venta de maíz de la más alta calidad..."
+  keywords:     maíz, agro, productor, nutralmena, chihuahua, cuauhtémoc...
+  icons:
+    icon/shortcut/apple: "/images/icono.webp"
+  openGraph:
+    title:       "Nutralmena - Maíz directo del campo"
+    url:         "https://nutralmena.com"
+    siteName:    "Nutralmena"
+    images[0]:   { url: "/images/icono.webp", width: 800, height: 600 }
+    locale:      "es_MX"
+    type:        "website"
+
+Favicon: app/icon.png (file-based convention, máxima compatibilidad)
+         app/layout.js metadata.icons también apunta a /images/icono.webp
+
+Global: WhatsAppButton se renderiza en el <body> del layout, fuera del <main>
+
+
+-----------------------------------------------------------------------
+9. IMÁGENES (public/images/)
+-----------------------------------------------------------------------
+
+about_hands.webp         → Sección About (imagen secundaria, manos/campo)
+corn_quality_control.webp → Hero slide 3 (control de calidad)
+cosecha-de-maiz.webp     → Cosecha (disponible, no usado actualmente en UI)
+costal_25kg.webp         → Mockup costal 25 kg (Products, HeroSlider)
+costal_40kg.webp         → Mockup costal 40 kg (Products, HeroSlider)
+grafico1.webp            → InfoBanner 1 (selección de granos)
+grafico2.webp            → InfoBanner 2 (procesamiento)
+grafico3.webp            → InfoBanner 3 (variedades)
+hero_corn_field.webp     → Hero slide 1 (campo de maíz)
+icono.png                → Favicon PNG (copiado a app/icon.png)
+icono.webp               → Favicon WebP (metadata OG image, WhatsApp)
+logo-footer.webp         → Logo para footer (se invierte a blanco via CSS)
+logo-header.webp         → Logo desktop + móvil post-scroll (color)
+logo-mobile.webp         → Logo móvil pre-scroll (versión blanca)
+logo.webp                → Logo genérico (watermarks)
+processing.webp          → Sección About (imagen principal) + Hero slide 2
+
+
+-----------------------------------------------------------------------
+10. SERVIDOR Y DESPLIEGUE
+-----------------------------------------------------------------------
+
+Entorno: Plesk Hosting
+Start:   node server.js  (no `next start`)
+
+server.js crea un servidor HTTP nativo que pasa requests al handler de Next.js.
+Escucha en process.env.PORT (asignado por Plesk).
+
+Scripts:
+  npm run dev    → next dev (desarrollo local)
+  npm run build  → next build (genera .next/)
+  npm start      → node server.js (producción)
+
+.env.production contiene solo NODE_ENV=production.
+Las variables SMTP deben configurarse en el panel de Plesk o en .env.local
+(que NO se sube a git).
+
+
+-----------------------------------------------------------------------
+11. ORDEN DE SECCIONES EN LA PÁGINA
+-----------------------------------------------------------------------
+
+<Header />         → Navegación fija (fuera del <main>)
+<main>
+  <HeroSliderV2 /> → id="inicio"    — Slider de bienvenida (primer viewport)
+  <About />        → id="nosotros"  — Historia y valores
+  <Products />     → id="productos" — Catálogo de 4 productos
+  <InfoBanners />  → (sin id)       — 3 banners alternados
+  <GraficoBanners/> → (sin id)      — 3 razones para elegir Nutralmena
+  <Contact />      → id="contacto"  — Formulario y datos de contacto
+</main>
+<Footer />         → Pie de página con CTA, links y créditos
+
+Nota: Contact se importa con next/dynamic (lazy load) para mejorar
+el LCP. Loading placeholder: div 600px alto con fondo #f9f9f9.
+
+
+-----------------------------------------------------------------------
+12. CONVENCIONES DE CÓDIGO
+-----------------------------------------------------------------------
+
+- CSS Modules para todos los estilos de componentes (.module.css)
+- Clases globales en globals.css: .container, .btn, .section, .section-title
+- Alias de importación: @/ = raíz del proyecto (configurado en jsconfig.json)
+- "use client" solo donde se necesita estado o efectos del lado del cliente
+- Imágenes: siempre con el componente <Image> de Next.js (optimización)
+- Iconos: lucide-react (excepto WhatsApp que no está disponible por trademark)
+- No hay TypeScript — todo es JavaScript (.js/.jsx)
+- No hay Tailwind — estilos con CSS puro (CSS Modules + globals)
+- Node >=25.0.0 requerido
+
+
+-----------------------------------------------------------------------
+13. DECISIONES DE DISEÑO Y CONTEXTO RELEVANTE
+-----------------------------------------------------------------------
+
+FAVICON
+  Se implementó con dos métodos complementarios:
+  1. File-based: app/icon.png (copiado de public/images/icono.png)
+     → Máxima compatibilidad, Next.js App Router lo sirve automáticamente
+  2. Metadata: layout.js icons → /images/icono.webp
+     → Para apple-touch-icon y otros formatos
+
+OG IMAGE / WHATSAPP
+  metadataBase: new URL("https://nutralmena.com") en layout.js es CRÍTICO.
+  Sin ello, Next.js generaba URLs relativas (/images/icono.webp) en los
+  meta tags og:image, que WhatsApp y otros crawlers no pueden resolver.
+  Con metadataBase, se generan URLs absolutas automáticamente.
+  Nota: WhatsApp cachea previsualizaciones. Para forzar actualización usar
+  el Facebook Sharing Debugger (developers.facebook.com/tools/debug/).
+
+HEADER MÓVIL
+  Antes de hacer scroll (header transparente):
+    → Logo: logo-mobile.webp (versión blanca para legibilidad sobre imagen)
+    → Botón hamburguesa: color --color-white
+  Después de hacer scroll (header blanco translúcido):
+    → Logo: logo-header.webp (versión de color)
+    → Botón hamburguesa: color --color-primary
+  Implementado con CSS Modules: .scrolled .logo / .scrolled .logoMobile
+  El switcher se hace con display: none / display: block, sin JS.
+
+FUENTE ROCA ONE
+  unicode-range restringido a letras (U+0041-005A, U+0061-007A, U+00C0-00FF,
+  U+00A1-00BF) para que los números usen Sora por defecto y no esperen la
+  carga de la fuente custom (evita Flash of Invisible Text en números).
+
+CONTACT (LAZY LOAD)
+  Se usa next/dynamic para cargar el formulario solo cuando el usuario
+  llega a esa sección. Reduce el bundle JS inicial.
+
+NODEMAILER SIN AUTENTICACIÓN
+  Si SMTP_USER no está definido, el transporter no incluye auth: {}.
+  Esto permite usar el servidor SMTP local de Plesk sin credenciales
+  si el dominio está alojado en el mismo servidor.
+
+
+-----------------------------------------------------------------------
+14. ESTADO ACTUAL DEL GIT (al momento de crear este contexto)
+-----------------------------------------------------------------------
+
+Rama: master (rama principal: main)
+Último commit: "Initial commit" (24e84ea)
+
+Archivos modificados (no commiteados):
+  - app/layout.js           → metadataBase agregado
+  - app/page.js             → orden de componentes
+  - components/Header.jsx   → doble logo (mobile/desktop)
+  - components/Header.module.css → estilos logo móvil + toggle
+  - components/Contact.jsx, Contact.module.css
+  - components/Footer.jsx
+  - components/HeroSliderV2.jsx, HeroSliderV2.module.css
+  - components/InfoBanners.jsx
+  - components/Products.jsx, Products.module.css
+  - components/About.jsx
+  - next.config.mjs, package.json, postcss.config.mjs
+
+Archivos nuevos (untracked):
+  - app/icon.png            → favicon file-based
+  - app/api/                → ruta de contacto
+  - public/images/*.webp    → imágenes en formato WebP
+  - public/images/logo-mobile.webp → logo blanco para móvil
+  - DEPLOY.md               → instrucciones de despliegue
+
+Archivos eliminados (del commit inicial):
+  - public/images/*.png     → reemplazados por *.webp
+  - Contexto.txt, PROYECTO.md, README.md → documentación anterior
+
+
+-----------------------------------------------------------------------
+FIN DEL ARCHIVO DE CONTEXTO
+-----------------------------------------------------------------------

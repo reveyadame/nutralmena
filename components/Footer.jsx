@@ -46,7 +46,7 @@ export default function Footer() {
         <div className={styles.brandCol}>
           <div className={styles.logoWrapper}>
             <Image
-              src="/images/logo-footer.png"
+              src="/images/logo-footer.webp"
               alt="Nutralmena"
               width={200}
               height={55}
