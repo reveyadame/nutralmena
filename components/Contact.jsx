@@ -22,14 +22,14 @@ export default function Contact() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
-      
+
       const data = await res.json();
-      
+
       if (!res.ok) throw new Error(data.error || "Ocurrió un error");
-      
+
       setStatus({ loading: false, success: true, error: null });
       setFormData({ name: "", phone: "", message: "" });
-      
+
       setTimeout(() => {
         setStatus(prev => ({ ...prev, success: false }));
       }, 5000);
@@ -54,7 +54,7 @@ export default function Contact() {
               </div>
               <div>
                 <h4>Teléfono</h4>
-                <p>+52 625 104 1330</p>
+                <p>+52 625 133 4499</p>
               </div>
             </div>
             <div className={styles.detailItem}>
@@ -80,14 +80,14 @@ export default function Contact() {
         <div className={styles.formColumn}>
           <form className={styles.form} onSubmit={handleSubmit}>
             <h3 className={styles.formTitle}>Envíanos un mensaje</h3>
-            
+
             {status.success && (
               <div style={{ background: 'rgba(166, 184, 100, 0.1)', borderLeft: '4px solid var(--color-primary)', padding: '1rem', marginBottom: '1.5rem', borderRadius: '4px', display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
                 <CheckCircle color="var(--color-primary)" size={20} />
                 <span style={{ color: 'var(--color-primary)', fontWeight: 500 }}>¡Mensaje enviado con éxito! Te contactaremos pronto.</span>
               </div>
             )}
-            
+
             {status.error && (
               <div style={{ background: 'rgba(232, 154, 64, 0.1)', borderLeft: '4px solid var(--color-orange)', padding: '1rem', marginBottom: '1.5rem', borderRadius: '4px', display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
                 <AlertCircle color="var(--color-orange)" size={20} />
