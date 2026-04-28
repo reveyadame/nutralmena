@@ -10,7 +10,7 @@ const navLinks = [
 ];
 
 const contactItems = [
-  { icon: Phone, label: "Teléfono", value: "+52 625 104 1330", href: "tel:+526251041330" },
+  { icon: Phone, label: "Teléfono", value: "+52 625 133 4499", href: "tel:+526251334499" },
   { icon: Mail, label: "Correo", value: "ventas@nutralmena.com", href: "mailto:ventas@nutralmena.com" },
   { icon: MapPin, label: "Ubicación", value: "Campo 106 Casa 111\nCuauhtémoc, Chih 31610", href: null },
   { icon: Clock, label: "Horario de atención", value: "Lun – Vie: 8:00 – 18:00\nSáb: 9:00 – 14:00", href: null },

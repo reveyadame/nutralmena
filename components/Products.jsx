@@ -4,29 +4,35 @@ import { CheckCircle2 } from "lucide-react";
 
 export default function Products() {
   const cornTypes = [
-    { 
-      id: "entero", 
-      name: "Maíz Entero", 
+    {
+      id: "entero",
+      name: "Maíz Entero",
       desc: "Granos enteros seleccionados de alta pureza.",
-      color: "var(--color-yellow)" 
+      color: "var(--color-yellow)"
     },
-    { 
-      id: "quebrado", 
-      name: "Maíz Quebrado", 
+    {
+      id: "quebrado",
+      name: "Maíz Quebrado",
       desc: "Procesado ideal para alimentación animal rápida.",
-      color: "var(--color-orange)" 
+      color: "var(--color-orange)"
     },
-    { 
-      id: "rolado", 
-      name: "Maíz Rolado", 
+    {
+      id: "rolado",
+      name: "Maíz Rolado",
       desc: "Hojuelas de maíz procesado con vapor para mejor digestión.",
-      color: "var(--color-accent-brown)" 
+      color: "var(--color-accent-brown)"
     },
-    { 
-      id: "mezclado", 
-      name: "Maíz Mezclado", 
-      desc: "Mezcla balanceada según requerimientos específicos.",
-      color: "var(--color-dark-brown)" 
+    {
+      id: "molido",
+      name: "Maíz Molido",
+      desc: "Maíz molido que destaca por su aporte energético y fácil digestión.",
+      color: "var(--color-orange)"
+    },
+    {
+      id: "mezclado",
+      name: "Maíz Mezclado",
+      desc: "Mezcla balanceada de maíz con sorgo.",
+      color: "var(--color-dark-brown)"
     },
   ];
 
@@ -37,14 +43,14 @@ export default function Products() {
         <div className={styles.header}>
           <h2 className="section-title">Catálogo de Productos</h2>
           <p className={styles.subtitle}>
-            Conoce nuestra selección de maíz procesado. <br/>
+            Conoce nuestra selección de maíz procesado. <br />
             <strong>Todas nuestras variedades están disponibles en presentaciones de 25 kg y 40 kg.</strong>
           </p>
         </div>
 
         <div className={styles.grid}>
           {cornTypes.map((product, idx) => (
-            <div key={product.id} className={styles.card} style={{'--product-color': product.color}}>
+            <div key={product.id} className={styles.card} style={{ '--product-color': product.color }}>
               <div className={styles.cardImages}>
                 <div className={styles.sackContainer}>
                   <Image src="/images/costal_40kg.webp" alt="Costal 40kg" width={200} height={300} className={styles.sackLarge} />
@@ -66,7 +72,7 @@ export default function Products() {
             </div>
           ))}
         </div>
-        
+
         <div className={styles.ctaWrapper}>
           <a href="#contacto" className="btn btn-primary">
             Solicitar Cotización Mayorista

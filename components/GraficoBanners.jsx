@@ -23,8 +23,8 @@ const reasons = [
     icon: Package,
     badge: "Amplio Catálogo",
     title: "Varias Presentaciones",
-    text: "Contamos con cuatro variedades de procesado (Entero, Quebrado, Rolado y Mezclado), todas disponibles en costales de 25 kg y 40 kg, para adaptarnos a cualquier volumen de operación.",
-    points: ["4 tipos de proceso disponibles", "Presentaciones de 25 kg y 40 kg", "Pedidos al por mayor con precio especial"],
+    text: "Contamos con cinco variedades de procesado (Entero, Quebrado, Rolado, Molido y Mezclado), todas disponibles en costales de 25 kg y 40 kg, para adaptarnos a cualquier volumen de operación.",
+    points: ["5 tipos de proceso disponibles", "Presentaciones de 25 kg y 40 kg", "Pedidos al por mayor con precio especial"],
   },
 ];
 

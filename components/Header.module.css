@@ -162,4 +162,16 @@
   .scrolled .mobileToggle {
     color: var(--color-primary);
   }
+
+  .navLink {
+    color: var(--color-primary);
+  }
+
+  .navLink::after {
+    background-color: var(--color-white);
+  }
+
+  .navLink:hover {
+    color: var(--color-orange);
+  }
 }

@@ -19,7 +19,7 @@ function WhatsAppIcon() {
 export default function WhatsAppButton() {
   return (
     <a
-      href="https://wa.me/526251041330"
+      href="https://wa.me/526251334499"
       className={styles.floatButton}
       target="_blank"
       rel="noopener noreferrer"
