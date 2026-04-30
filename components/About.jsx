@@ -14,7 +14,7 @@ export default function About() {
             </div>
           </div>
           <div className={styles.secondaryImage}>
-            <Image src="/images/about_hands.webp" alt="Campo de Maíz" width={400} height={260} className={styles.img} />
+            <Image src="/images/campo_maiz.webp" alt="Campo de Maíz" width={400} height={260} className={styles.img} />
           </div>
         </div>
 
